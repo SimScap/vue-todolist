@@ -17,11 +17,14 @@
             <div class="row">
                 <div class="col-12">
                     <h3>{{ title }}</h3>
-                    <form>
+                    <form @submit.prevent="addTodo">
                         <label for="newTodo">New Todo</label>
-                        <input type="text" name="newTodo" id="newTodo">
+                        <input v-model="newTodo" type="text" name="newTodo" id="newTodo">
                         <button type="submit" name="button">Add Todo</button>
                     </form>
+                    <ul>
+                        <li v-for="element in todoData">{{element.title}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
