@@ -23,7 +23,10 @@
                         <button type="submit" name="button">Add Todo</button>
                     </form>
                     <ul>
-                        <li v-for="element in todoData">{{element.title}}</li>
+                        <li v-for="element in todoData">
+                            <input type="checkbox" :checked="element.done">
+                            <span>{{element.title}}</span>
+                        </li>
                     </ul>
                 </div>
             </div>

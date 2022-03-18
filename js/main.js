@@ -11,7 +11,9 @@ const app = new Vue({
             this.todoData.push({
                 title: this.newTodo,
                 done:false,
-            });     
+            });   
+            
+            this.newTodo = "" //Resetto l'input dove aver confermato il testo da inserire
         
         }
     },
