@@ -1,6 +1,36 @@
 ul {
-    list-style-type: none;
+    list-style-type: none;    
+    height: 400px; 
+    overflow-y: auto;
+}
+li{
+    border-bottom: 2px solid blue;
+    border-left: 2px solid yellow;
+    background-color: wheat;
+}
+li button{
+    height: 100%;   
 }
 .done{
     text-decoration: line-through;
 }
+main{
+    height: calc(100vh - 200px);
+    background-image: url('../img/Gesù-il-Cristo-948x542.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+.row{
+    border: 2px solid brown;
+}
+
+header,footer{
+    height: 100px;
+    background-color: black;
+}
+
+.list-item-toggle {
+   border: 4px solid red;
+   width: 100%;
+  }

@@ -12,27 +12,33 @@
     <title>Vue Todolist</title>
 </head>
 <body>
+    <header></header>
     <main id="app">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h3>{{ title }}</h3>
-                    <form @submit.prevent="addTodo">
-                        <label for="newTodo">New Todo</label>
+        <div class="container text-center p-5">
+            <div class="row justify-content-center">    
+                    <div class="col-12">
+                        <h3 class="fw-bold text-primary">{{ title }}</h3>
+                    <form @submit.prevent="addTodo" class="mb-5">
+                        <label class="fw-bold text-danger" for="newTodo">New Todo</label>
                         <input v-model="newTodo" type="text" name="newTodo" id="newTodo">
-                        <button type="submit" name="button">Add Todo</button>
+                        <button type="submit" name="button" class="fw-bold" :disabled="newTodo.length === 0">Add Todo</button>
                     </form>
-                    <ul>
-                        <li v-for="element in todoData">
-                            <input type="checkbox" v-model="todoData.done">
-                            <span :class="{ done: todoData.done }">{{element.title}}</span>
-                        </li>
-                    </ul>
-                </div>
+                    </div>
+                    <div class="col-12">
+                        <ul v-if="todoData.length >= 1">
+                            <li v-for="element in todoData" class="fw-bold mb-2 d-flex justify-content-between list-item-toggle"
+                            :class="{ done: todoData.done }">                              
+                            <input type="checkbox" v-model="todoData.done" >            
+                                <span>{{element.title}}</span>
+                                <button @click="removeTodo(Index)" >Remove</button>
+                            </li>
+                        </ul>
+                    <h5 class="fw-bold text-white" v-else>No todo added</h5>
+                    </div>   
             </div>
         </div>
     </main>
-
     <script type="text/javascript" src="js/main.js"></script>  
+    <footer></footer>
 </body>
 </html>

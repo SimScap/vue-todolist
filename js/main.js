@@ -4,17 +4,24 @@ const app = new Vue({
     title: 'Todo App',
     newTodo: '',
     todoData: [],
-
+    
     },
     methods: {
         addTodo(){
+            if (this.newTodo.trim() != ""){
             this.todoData.push({
                 title: this.newTodo,
-                done:false,
-            });   
-            
-            this.newTodo = "" //Resetto l'input dove aver confermato il testo da inserire
-        
-        }
-    },
-})
+                done: false,
+            },            
+            );                        
+            this.newTodo = ""
+        }},
+
+        removeTodo(index){
+            this.todoData.splice(index, 1);
+        },
+        toggleComplete(item) {
+            item.done = !item.done;},
+    }
+    },);
+
